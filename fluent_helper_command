@@ -1,4 +1,9 @@
-				
+1. As in my current system docker of elastic search and fluentd not running have to install elastic search which is a zip extract and fluentd tl agent installed 
+2. No Need to install ruby for fluentd from  https://td-agent-package-browser.herokuapp.com/5/windows	
+3. No need to install seperate elasticsearch plugin as well			
+4. U need to set elastic search user [elastic] password first time . search in chatgpt how to set it 
+5. C:\opt\fluent\bin where fluentd is installed
+6. elasticsearch installed in D:\elasticsearch-9.1.2\config
 
 
 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
