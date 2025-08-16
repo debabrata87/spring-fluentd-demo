@@ -1,0 +1,12 @@
+<configuration>
+    <appender name="FLUENT" class="ch.qos.logback.more.appenders.DataFluentAppender">
+        <tag>spring.logs</tag>
+        <remoteHost>localhost</remoteHost>
+        <port>24224</port>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FLUENT"/>
+    </root>
+</configuration>
