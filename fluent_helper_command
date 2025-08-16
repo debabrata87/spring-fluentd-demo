@@ -1,0 +1,336 @@
+				
+
+
+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
+
+
+PS D:\elasticsearch-9.1.2\bin> .\elasticsearch.bat
+
+Password for the [elastic] user successfully reset.
+
+https://localhost:9200/ 
+username :elastic
+Password: YbBdWCNYrZ23k5PNxt39
+
+
+
+curl --cacert D:\elasticsearch-9.1.2\config\certs\http_ca.crt -u elastic:YbBdWCNYrZ23k5PNxt39 https://localhost:9200
+curl --cacert "D:\elasticsearch-9.1.2\config\certs\http_ca.crt" -u "elastic:YbBdWCNYrZ23k5PNxt39" "https://localhost:9200"
+
+
+curl.exe --cacert "D:\elasticsearch-9.1.2\config\certs\http_ca.crt" -u elastic:YbBdWCNYrZ23k5PNxt39 "https://localhost:9200"
+ 
+
+PS C:\Users\Debabrata> curl.exe -k -u elastic:YbBdWCNYrZ23k5PNxt39 "https://localhost:9200"
+{
+  "name" : "DESKTOP-G6JINKQ",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "0ur9nNTYQmeg3kuoQdvgZg",
+  "version" : {
+    "number" : "9.1.2",
+    "build_flavor" : "default",
+    "build_type" : "zip",
+    "build_hash" : "ca1a70216fbdefbef3c65b1dff04903ea5964ef5",
+    "build_date" : "2025-08-11T15:04:41.449624592Z",
+    "build_snapshot" : false,
+    "lucene_version" : "10.2.2",
+    "minimum_wire_compatibility_version" : "8.19.0",
+    "minimum_index_compatibility_version" : "8.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+PS C:\Users\Debabrata>
+
+or in browser
+
+
+PS C:\opt\fluent\bin> .\fluentd -c C:\opt\fluent\custom_config\fluent.conf --dry-run
+
+
+PS C:\opt\fluent\bin> .\fluentd -c C:\opt\fluent\custom_config\fluent.conf
+2025-08-13 20:48:01 +0100 [info]: init supervisor logger path=nil rotate_age=nil rotate_size=nil
+2025-08-13 20:48:01 +0100 [info]: parsing config file is succeeded path="C:\\opt\\fluent\\custom_config\\fluent.conf"
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-calyptia-monitoring' version '0.1.3'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-elasticsearch' version '6.0.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-elasticsearch' version '5.4.3'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-flowcounter-simple' version '0.1.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-kafka' version '0.19.3'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-metrics-cmetrics' version '0.1.2'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-opensearch' version '1.1.4'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-parser-winevt_xml' version '0.2.7'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-prometheus' version '2.1.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-prometheus_pushgateway' version '0.1.1'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-record-modifier' version '2.2.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-rewrite-tag-filter' version '2.4.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-s3' version '1.8.1'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-sd-dns' version '0.1.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-td' version '1.2.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-webhdfs' version '1.6.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-windows-eventlog' version '0.9.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluent-plugin-windows-exporter' version '1.0.0'
+2025-08-13 20:48:01 +0100 [info]: gem 'fluentd' version '1.18.0'
+2025-08-13 20:48:04 +0100 [info]: using configuration file: <ROOT>
+  <source>
+    @type forward
+    port 24224
+    bind "0.0.0.0"
+  </source>
+  <match spring.logs>
+    @type elasticsearch
+    host "localhost"
+    port 9200
+    scheme https
+    user "elastic"
+    password xxxxxx
+    ssl_verify true
+    ca_file "D:/elasticsearch-9.1.2/config/certs/http_ca.crt"
+    logstash_format true
+    index_name "spring-logs"
+    include_tag_key true
+    type_name "_doc"
+  </match>
+</ROOT>
+2025-08-13 20:48:04 +0100 [info]: starting fluentd-1.18.0 pid=16444 ruby="3.2.6"
+2025-08-13 20:48:04 +0100 [info]: spawn command to main:  cmdline=["C:/opt/fluent/bin/ruby.exe", "-Eascii-8bit:ascii-8bit", "C:/opt/fluent/bin/fluentd", "-c", "C:\\opt\\fluent\\custom_config\\fluent.conf", "--under-supervisor"]
+2025-08-13 20:48:08 +0100 [info]: #0 init worker0 logger path=nil rotate_age=nil rotate_size=nil
+2025-08-13 20:48:08 +0100 [info]: adding match pattern="spring.logs" type="elasticsearch"
+2025-08-13 20:48:12 +0100 [info]: adding source type="forward"
+2025-08-13 20:48:12 +0100 [info]: #0 starting fluentd worker pid=16768 ppid=16444 worker=0
+2025-08-13 20:48:12 +0100 [info]: #0 listening port port=24224 bind="0.0.0.0"
+2025-08-13 20:48:12 +0100 [info]: #0 fluentd worker is now running worker=0
+
+
+PS C:\Users\Debabrata> netstat -ano | findstr 24224
+  TCP    0.0.0.0:24224          0.0.0.0:0              LISTENING       16768
+  UDP    0.0.0.0:24224          *:*                                    16768
+PS C:\Users\Debabrata>
+
+
+
+PS C:\opt\fluent\bin> # Ignore SSL certificate errors
+>> add-type @"
+>> using System.Net;
+>> using System.Security.Cryptography.X509Certificates;
+>> public class TrustAllCertsPolicy : ICertificatePolicy {
+>>     public bool CheckValidationResult(
+>>         ServicePoint srvPoint, X509Certificate certificate,
+>>         WebRequest request, int certificateProblem) { return true; }
+>> }
+>> "@
+>> [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+>>
+>> # JSON body
+>> $body = @{ message = "Hello from PowerShell with credentials for Debabrata" } | ConvertTo-Json
+>>
+>> # Create credential object
+>> $cred = Get-Credential -UserName "elastic" -Message "Enter password"
+>>
+>> # Invoke REST method
+>> Invoke-RestMethod -Uri "https://localhost:9200/spring-logs-test/_doc?pretty" `
+>>     -Method Post `
+>>     -Headers @{ "Content-Type" = "application/json" } `
+>>     -Body $body `
+>>     -Credential $cred
+
+
+_index        : spring-logs-test
+_id           : ad86pZgBRsUccebf5rLG
+_version      : 1
+result        : created
+_shards       : @{total=2; successful=1; failed=0}
+_seq_no       : 1
+_primary_term : 1
+
+
+
+PS C:\opt\fluent\bin> curl.exe -k -u elastic:YbBdWCNYrZ23k5PNxt39 `
+>>     "https://localhost:9200/spring-logs-test/_search?pretty"
+{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 2,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "spring-logs-test",
+        "_id" : "aN85pZgBRsUccebfubIm",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "Hello from PowerShell with credentials"
+        }
+      },
+      {
+        "_index" : "spring-logs-test",
+        "_id" : "ad86pZgBRsUccebf5rLG",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "Hello from PowerShell with credentials for Debabrata"
+        }
+      }
+    ]
+  }
+}
+PS C:\opt\fluent\bin>
+
+
+PS C:\opt\fluent\bin> .\fluentd -c C:\opt\fluent\custom_config\fluent_without_ssl.conf -vv
+
+
+PS C:\opt\fluent\bin> Write-Output '{ "message": "now with custom message debabrata test 2" }' | .\fluent-cat spring.logs
+PS C:\opt\fluent\bin> curl.exe -k -u elastic:YbBdWCNYrZ23k5PNxt39 "https://localhost:9200/logstash-*/_search?pretty"
+{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 6,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "logstash-2025.08.14",
+        "_id" : "X08appgBrEKVv7zGkFDF",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "hello from fluentd test",
+          "@timestamp" : "2025-08-14T02:02:28.935885300+01:00",
+          "tag" : "spring.logs"
+        }
+      },
+      {
+        "_index" : "logstash-2025.08.14",
+        "_id" : "YE8appgBrEKVv7zGkFDF",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "hello from fluentd test 2",
+          "@timestamp" : "2025-08-14T02:03:16.108419000+01:00",
+          "tag" : "spring.logs"
+        }
+      },
+      {
+        "_index" : "logstash-2025.08.14",
+        "_id" : "ZE8jppgBrEKVv7zGuVDW",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "hello with timestamp",
+          "@timestamp" : "2025-08-14T02:13:29.907771900+01:00",
+          "tag" : "spring.logs"
+        }
+      },
+      {
+        "_index" : "logstash-2025.08.14",
+        "_id" : "ZU8oppgBrEKVv7zGJFBf",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "hello with timestamp",
+          "@timestamp" : "2025-08-14T02:18:19.091085400+01:00",
+          "tag" : "spring.logs"
+        }
+      },
+      {
+        "_index" : "logstash-2025.08.14",
+        "_id" : "Zk8pppgBrEKVv7zGUlAh",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "now with custom message debabrata",
+          "@timestamp" : "2025-08-14T02:19:37.044405900+01:00",
+          "tag" : "spring.logs"
+        }
+      },
+      {
+        "_index" : "logstash-2025.08.14",
+        "_id" : "Z08qppgBrEKVv7zGP1Au",
+        "_score" : 1.0,
+        "_source" : {
+          "message" : "now with custom message debabrata test 2",
+          "@timestamp" : "2025-08-14T02:20:37.630408600+01:00",
+          "tag" : "spring.logs"
+        }
+      }
+    ]
+  }
+}
+PS C:\opt\fluent\bin>
+
+
+}
+PS C:\opt\fluent\bin> curl.exe -k -u elastic:YbBdWCNYrZ23k5PNxt39 "https://localhost:9200/_cluster/health?pretty"
+{
+  "cluster_name" : "elasticsearch",
+  "status" : "yellow",
+  "timed_out" : false,
+  "number_of_nodes" : 1,
+  "number_of_data_nodes" : 1,
+  "active_primary_shards" : 6,
+  "active_shards" : 6,
+  "relocating_shards" : 0,
+  "initializing_shards" : 0,
+  "unassigned_shards" : 3,
+  "unassigned_primary_shards" : 0,
+  "delayed_unassigned_shards" : 0,
+  "number_of_pending_tasks" : 4,
+  "number_of_in_flight_fetch" : 0,
+  "task_max_waiting_in_queue_millis" : 298325,
+  "active_shards_percent_as_number" : 66.66666666666666
+}
+PS C:\opt\fluent\bin>
+
+PS C:\opt\fluent\bin> curl.exe -k -u elastic:YbBdWCNYrZ23k5PNxt39 "https://localhost:9200/_cat/indices?v"
+health status index               uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
+yellow open   logstash-2025.08.14 JbN_20j-Rc2r9lJeeg06Sg   1   1          8            0     41.7kb         41.7kb       41.7kb
+yellow open   spring-logs-test    YhqtAWmVRlSRrk-H4rvcMg   1   1          2            0     10.2kb         10.2kb       10.2kb
+yellow open   spring-logs         6ldeMmmrRwu2ZGYPUTNs6g   1   1          3            0        6kb            6kb          6kb
+PS C:\opt\fluent\bin>
+
+--------- to delete an indices
+
+curl.exe -u elastic:YbBdWCNYrZ23k5PNxt39 -k -X DELETE "https://localhost:9200/logstash-2025.08.14"
+
+--------- to check data on a particular indices
+
+curl.exe -k -u elastic:YbBdWCNYrZ23k5PNxt39 "https://localhost:9200/logstash-2025.08.15*/_search?pretty"
+
+---- Elasticsearch cluster to Make it green from yellow --------
+
+Add-Type @"
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+public class TrustAllCertsPolicy : ICertificatePolicy {
+    public bool CheckValidationResult(ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem) {
+        return true;
+    }
+}
+"@
+
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+
+$cred = New-Object System.Management.Automation.PSCredential(
+    "elastic", 
+    (ConvertTo-SecureString "YbBdWCNYrZ23k5PNxt39" -AsPlainText -Force)
+)
+
+PS C:\Users\Debabrata> Invoke-RestMethod -Uri "https://localhost:9200/_all/_settings" -Method PUT -Headers @{ "Content-Type" = "application/json" } -Body (@{ "index" = @{ "number_of_replicas" = 0 } } | ConvertTo-Json) -Credential $cred -UseBasicParsing
+
+acknowledged
+------------
+        True
+
+---- Elasticsearch cluster to Make it green from yellow --------
